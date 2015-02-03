@@ -1,0 +1,30 @@
+package ch3.stacks;
+//괄호 짝 검사 클래스
+public class Balanced {
+	private String openSet;
+	private String closeSet;
+	public Balanced(String openSet, String closeSet){
+		//짝이 맞는 시작과 끝 기호는 두 개의 문자열인자를 통하여 생성자에게 제공
+		//사전조건:어느문자도 openSet과 closeSet에 두번이상 나오지 않는다.
+		//openSet의 크기 = closeSet의 크기
+		this.openSet = openSet;
+		this.closeSet = closeSet;
+	}
+	public int test(String expression){
+		//expression이 균형되어 있으면 0 ,균형x면 1,처리전에 미리끝나면 2
+		char currChar;  //조사되는 현재 표현식 문자
+		int currCharIndex;  //현재 문자의 색인
+		int lastCharIndex;  //표현식에서 마지막 문자의 색인
+		int openIndex;
+		int closeIndex;
+		boolean stillBalanced = true;
+		BoundedStackInterface stack;
+		stack = new ArrayStack(expression.length());
+		currCharIndex=0;
+		lastCharIndex=expression.length()-1;
+	}
+	
+	
+	
+
+}

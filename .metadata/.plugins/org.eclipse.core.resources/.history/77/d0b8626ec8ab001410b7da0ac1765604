@@ -1,0 +1,59 @@
+package ch3.stacks;
+
+//괄호 짝 검사 클래스
+public class Balanced {
+	private String openSet;
+	private String closeSet;
+
+	public Balanced(String openSet, String closeSet) {
+		// 짝이 맞는 시작과 끝 기호는 두 개의 문자열인자를 통하여 생성자에게 제공
+		// 사전조건:어느문자도 openSet과 closeSet에 두번이상 나오지 않는다.
+		// openSet의 크기 = closeSet의 크기
+		this.openSet = openSet;
+		this.closeSet = closeSet;
+	}
+
+	public int test(String expression) {
+		// expression이 균형되어 있으면 0 ,균형x면 1,처리전에 미리끝나면 2
+		char currChar; // 조사되는 현재 표현식 문자
+		int currCharIndex; // 현재 문자의 색인
+		int lastCharIndex; // 표현식에서 마지막 문자의 색인
+		int openIndex; // openSet에서 현재 문자
+		int closeIndex; // closeSet에서 현재 문자
+		boolean stillBalanced = true; // 표현식이 균형되어 있는한 참
+		BoundedStackInterface stack;
+		stack = new ArrayStack(expression.length());
+		currCharIndex = 0;
+		lastCharIndex = expression.length() - 1;
+
+		while (stillBalanced && (currCharIndex <= lastCharIndex)) {
+			currChar = expression.charAt(currCharIndex);
+			openIndex = openSet.indexOf(currChar);
+
+			if (openIndex != -1) { // 현재 문자가 openSet에 있으면
+				stack.push(openIndex);
+			} else {
+				closeIndex = closeSet.indexOf(currChar);
+
+				if (closeIndex != -1) { // 현재 문자가 close에 있으면
+					try { // 스택으로부터 색인을 pop시도
+						openIndex = (Integer) stack.top();
+						stack.pop();
+
+						if (openIndex != closeIndex) // pop된 색인가 짝이 맞지 않으면
+							stillBalanced = false; // 표현식은 균형이 되지 않은거임
+					} catch (StackUnderflowException e) {
+						stillBalanced = false;
+					}
+				}
+			}
+			currCharIndex++; // 다음문자를 처리하기 위해 준비
+		}
+		if (!stillBalanced)
+			return 1; // 균현이 맞지 않는 기호
+		else if (!stack.isEmpty())
+			return 2;
+		else
+			return 0;
+	}
+}

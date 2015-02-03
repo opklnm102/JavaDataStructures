@@ -1,0 +1,50 @@
+package ch3.stacks;
+
+public class ArrayStack implements BoundedStackInterface{
+
+	protected final int DEFCAP=100;  //기본용량
+	protected Object[] stack;  //스택 항목을 보유
+	protected int topIndex = -1;  //스택의 꼭대기 항목의 색인
+	
+	public ArrayStack(){
+		stack = new Object[DEFCAP];
+	}
+	
+	public ArrayStack(int maxSize){
+		stack = new Object[maxSize];
+	}
+	
+	@Override
+	public void pop() throws StackUnderflowException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Object top() throws StackUnderflowException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		if(topIndex == -1)
+			return true;
+		else
+			return false;
+	}
+
+	@Override
+	public void push(Object element) throws StackOverflowException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isFull() {
+		if(topIndex == (stack.length -1))
+			return true;
+		else
+			return false;
+	}
+}

@@ -1,0 +1,44 @@
+package ch3.stacks;
+
+import java.util.ArrayList;
+
+public class ArrayListStack implements UnboundedStackInterface{
+
+	protected ArrayList<Object> stack;
+	
+	public ArrayListStack(){
+		stack = new ArrayList<Object>();
+	}
+	
+	@Override
+	public void pop() throws StackUnderflowException {
+		if(!isEmpty())
+			stack.remove(stack.size()-1);
+		else
+			throw new StackUnderflowException("Pop attempted on an empty stack.");
+		}
+
+	@Override
+	public Object top() throws StackUnderflowException {
+		Object topOfStack = null;
+		if(!isEmpty())
+			topOfStack = stack.get(stack.size()-1);
+		else
+			throw new StackUnderflowException("Top attempted on an empty stack.");
+		return topOfStack;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		if(stack.size() == 0)
+			return true;
+		else
+			return false;
+	}
+
+	@Override
+	public void push(Object element) {
+		stack.add(element);		
+	}
+
+}
