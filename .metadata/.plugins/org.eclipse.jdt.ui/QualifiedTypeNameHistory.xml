@@ -3,8 +3,12 @@
 <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
 <fullyQualifiedTypeName name="ch3.stacks.StackInterface"/>
 <fullyQualifiedTypeName name="ch3.stacks.BoundedStackInterface"/>
-<fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="ch3.stacks.StackOverflowException"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="ch3.stacks.UnboundedStackInterface"/>
+<fullyQualifiedTypeName name="support.LLObjectNode"/>
 <fullyQualifiedTypeName name="ch3.stacks.StackUnderflowException"/>
+<fullyQualifiedTypeName name="ch3.postfix.PostFixException"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="ch3.postfix.PFixConsole"/>
 </qualifiedTypeNameHistroy>
