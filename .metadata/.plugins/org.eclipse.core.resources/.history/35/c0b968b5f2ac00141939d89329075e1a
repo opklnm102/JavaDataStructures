@@ -1,0 +1,19 @@
+package ch5.queues;
+
+public class ArrayBndQueue implements BoundedQueueInterface {
+	protected final int DEFCAP = 100;  //기본용량
+	protected Object[] queue;  //큐 항목을 보유하는 배열
+	protected int numElements=0;  //큐에 있는 항목의 개수
+	protected int front=0;  //큐의 앞 지시자 색인
+	protected int rear;  //큐의 뒤 지시자 색인
+
+	public ArrayBndQueue(){
+		queue = new Object[DEFCAP];
+		rear = DEFCAP-1;		
+	}
+	
+	public ArrayBndQueue(int maxSize){
+		queue = new Object[maxSize];
+		rear = maxSize-1;
+	}
+}

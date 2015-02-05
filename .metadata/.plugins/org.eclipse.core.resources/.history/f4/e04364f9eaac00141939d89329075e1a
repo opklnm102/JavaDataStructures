@@ -1,0 +1,97 @@
+package ch4;
+
+import java.util.Random;
+
+public class Grid {
+	protected int rows; // 격자 행의 개수
+	protected int cols; // 격자 열의 개수
+	protected boolean[][] grid; // 블롭을 포함하는 격자
+	boolean[][] visited; // blobCount에 의해 사용됨
+
+	public Grid(int rows, int cols, int percentage)
+	// 사전조건:rows and cols>0
+	// 0<=percentage<=100
+	//
+	// rows, cols 크기의 격자를 생성, 위치는 백분율 확률에 기반한 블롭 문자로 지정됨
+	{
+		this.rows = rows;
+		this.cols = cols;
+		grid = new boolean[rows][cols];
+		// 임의 숫자를 생성하기 위함
+		int randInt;
+		Random rand = new Random();
+		for (int i = 0; i < rows; i++)
+			for (int j = 0; j < cols; j++) {
+				randInt = rand.nextInt(100); // 임의 숫자 0..9
+				if (randInt < percentage)
+					grid[i][j] = true;
+				else
+					grid[i][j] = false;
+			}
+	}
+
+	public String tostring() {
+		String gridString = "";
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
+				if (grid[i][j])
+					gridString = gridString + "X";
+				else
+					gridString = gridString + "-";
+			}
+			gridString = gridString + "\n"; // 행의 끝
+		}
+		return gridString;
+	}
+
+	public int blobCount() {
+		// 격자에서 블롭의 개수를 복귀함
+		int count = 0;
+		visited = new boolean[rows][cols]; // 위치가 방문되었으면 참
+		// visited를 초기화
+		for (int i = 0; i < rows; i++)
+			for (int j = 0; j < cols; j++)
+				visited[i][j] = false;
+
+		// 블롭을 계산
+		for (int i = 0; i < rows; i++)
+			for (int j = 0; j < cols; j++)
+				if (grid[i][j] && !visited[i][j]) {
+					count++;
+					markBlob(i, j);
+				}
+		return count;
+	}
+
+	private void markBlob(int row, int col)
+	// 방문하면서 row, col위치를 마크
+	// 확인하고 적절하면 그 위치의 위, 아래, 왼쪽, 오른쪽 위치를 마크
+	{
+		visited[row][col] = true;
+
+		//위를 확인
+		if ((row - 1) >= 0) // 격자에 있고
+			if (grid[row - 1][col]) // 블롭 문자를 가지면
+				if (!visited[row - 1][col]) // 그리고 방문되지 않았으면
+					markBlob(row - 1, col); // 마크함
+
+		//아래를 확인
+		if ((row + 1) < rows) // 격자에 있고
+			if (grid[row + 1][col]) // 블롭 문자를 가지면
+				if (!visited[row + 1][col]) // 그리고 방문되지 않았으면
+					markBlob(row + 1, col); // 마크함
+
+		//왼쪽을 확인
+		if ((col - 1) >= 0) // 격자에 있고
+			if (grid[row][col - 1]) // 블롭 문자를 가지면
+				if (!visited[row][col - 1]) // 그리고 방문되지 않았으면
+					markBlob(row, col - 1); // 마크함
+
+		//오른쪽을 확인
+		if ((col + 1) < cols) // 격자에 있고
+			if (grid[row][col + 1]) // 블롭 문자를 가지면
+				if (!visited[row][col + 1]) // 그리고 방문되지 않았으면
+					markBlob(row, col + 1); // 마크함
+	}
+
+}

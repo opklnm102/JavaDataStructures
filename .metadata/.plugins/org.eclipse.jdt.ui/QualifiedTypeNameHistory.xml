@@ -2,13 +2,21 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
 <fullyQualifiedTypeName name="ch3.stacks.StackInterface"/>
-<fullyQualifiedTypeName name="ch3.stacks.BoundedStackInterface"/>
 <fullyQualifiedTypeName name="ch3.stacks.StackOverflowException"/>
-<fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="ch3.stacks.UnboundedStackInterface"/>
-<fullyQualifiedTypeName name="support.LLObjectNode"/>
 <fullyQualifiedTypeName name="ch3.stacks.StackUnderflowException"/>
 <fullyQualifiedTypeName name="ch3.postfix.PostFixException"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="ch3.postfix.PFixConsole"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="support.LLObjectNode"/>
+<fullyQualifiedTypeName name="ch5.queues.QueueOverflowException"/>
+<fullyQualifiedTypeName name="ch5.queues.QueueInterface"/>
+<fullyQualifiedTypeName name="ch3.stacks.BoundedStackInterface"/>
+<fullyQualifiedTypeName name="ch3.stacks.ArrayStack"/>
+<fullyQualifiedTypeName name="ch5.queues.BoundedQueueInterface"/>
+<fullyQualifiedTypeName name="ch5.queues.ArrayBndQueue"/>
+<fullyQualifiedTypeName name="ch5.queues.UnboundedQueueInterface"/>
+<fullyQualifiedTypeName name="ch5.queues.ArrayUnbndQueue"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="ch5.queues.QueueUnderflowException"/>
 </qualifiedTypeNameHistroy>

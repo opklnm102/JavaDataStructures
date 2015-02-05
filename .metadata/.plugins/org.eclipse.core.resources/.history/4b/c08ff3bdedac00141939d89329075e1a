@@ -1,0 +1,24 @@
+package ch4;
+
+import support.LLObjectNode;
+import ch3.stacks.LinkedStack;
+import ch3.stacks.UnboundedStackInterface;
+
+//스택을 이용한 역 프린팅
+public class LinkedStack3 extends LinkedStack{
+	public void printReversed(){
+		UnboundedStackInterface stack = new LinkedStack();
+		LLObjectNode listNode;
+		Object object;
+		listNode = top;
+		while(listNode != null){ //참조들을 스택에 넣음
+			stack.push(listNode.getInfo());
+			listNode = listNode.getLink();			
+		}
+		//참조를 역순으로 찾아서 항목을 프린트
+		while(!stack.isEmpty()){
+			System.out.println(" " + stack.top());
+			stack.pop();
+		}
+	}
+}
