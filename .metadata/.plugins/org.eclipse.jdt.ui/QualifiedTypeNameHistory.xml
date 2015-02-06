@@ -8,7 +8,6 @@
 <fullyQualifiedTypeName name="ch3.postfix.PostFixException"/>
 <fullyQualifiedTypeName name="ch3.postfix.PFixConsole"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
-<fullyQualifiedTypeName name="support.LLObjectNode"/>
 <fullyQualifiedTypeName name="ch5.queues.QueueOverflowException"/>
 <fullyQualifiedTypeName name="ch5.queues.QueueInterface"/>
 <fullyQualifiedTypeName name="ch3.stacks.BoundedStackInterface"/>
@@ -18,5 +17,10 @@
 <fullyQualifiedTypeName name="ch5.queues.UnboundedQueueInterface"/>
 <fullyQualifiedTypeName name="ch5.queues.ArrayUnbndQueue"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="support.LLObjectNode"/>
 <fullyQualifiedTypeName name="ch5.queues.QueueUnderflowException"/>
+<fullyQualifiedTypeName name="support.Customer"/>
+<fullyQualifiedTypeName name="ch5.queues.GlassQueue"/>
+<fullyQualifiedTypeName name="support.CustomerGenerator"/>
+<fullyQualifiedTypeName name="ch5.queues.Simulation"/>
 </qualifiedTypeNameHistroy>
