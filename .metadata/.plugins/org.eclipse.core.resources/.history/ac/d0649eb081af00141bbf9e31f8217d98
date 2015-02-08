@@ -1,0 +1,19 @@
+package ch6.lists;
+
+import java.io.ObjectInputStream;
+
+public class GetSerSong {
+	public static void main(String[] args) {
+		SerSong song;
+		ObjectInputStream in = new ObjectInputStream(new FileInputSream("song.dat"));
+		
+		try{
+			song = (SerSong)in.readObject();
+			System.out.println("The name of the song is " + song.getName());
+			System.out.println("The duration of the song is " + song.getDuration());
+		}
+		catch(Exception e){
+			System.out.println();
+		}
+	}
+}

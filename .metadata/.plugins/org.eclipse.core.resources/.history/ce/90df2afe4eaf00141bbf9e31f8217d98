@@ -1,0 +1,12 @@
+package ch6.lists;
+
+public class ArrayUnsortedList extends List implements UnsortedListInterface {
+	
+	public ArrayUnsortedList() {
+		super();
+	}
+	
+	public ArrayUnsortedList(int origCap) {
+		super(origCap);
+	}	
+}

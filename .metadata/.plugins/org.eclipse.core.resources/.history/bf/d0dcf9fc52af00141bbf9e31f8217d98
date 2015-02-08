@@ -1,0 +1,74 @@
+package ch6.lists;
+
+public class ArrayIndexedList extends List implements IndexedListInterface{
+	
+	public ArrayIndexedList() {
+		super();
+	}
+	
+	public ArrayIndexedList(int origCap) {
+		super(origCap);
+	}
+
+	@Override
+	public void add(int index, Object element) {
+		if((index < 0) || (index>size()))
+			throw new IndexOutOfBoundsException("illegal index of " + index + " passed to ArrayIndexedList and method.\n");
+		
+		if(numElements == list.length)
+			enlarge();
+		
+		for(int i=numElements; i>index; i--)
+			list[i] = list[i-1];
+		list[index] = element;
+		numElements++;
+	}
+
+	@Override
+	public Object set(int index, Object element) {
+		if((index < 0) || (index >= size()))
+			throw new IndexOutOfBoundsException("illegal index of " + index + " passed to ArrayIndexedList set method.\n");
+		
+		Object hold = list[index];
+		list[index] = element;
+		return hold;
+	}
+
+	@Override
+	public Object get(int index) {
+		if((index < 0) || (index >= size()))
+			throw new IndexOutOfBoundsException("illegal index of " + index + " passed to ArrayIndexedList set method.\n");
+		
+		return list[index];
+	}
+
+	@Override
+	public int indexOf(Object element) {
+		find(element);
+		if(found)
+			return location;
+		else
+			return -1;
+	}
+
+	@Override
+	public Object remove(int index) {
+		if((index < 0) || (index >= size()))
+			throw new IndexOutOfBoundsException("illegal index of " + index + " passed to ArrayIndexedList set method.\n");
+		Object hold = list[index];
+		for(int i=index; i<numElements; i++)
+			list[index] = list[index+1];
+		
+		list[numElements] = null;
+		numElements--;
+		return hold;
+	}
+	
+	public String toString(){
+		String listString = "List:\n";
+		for(int i=0; i<numElements; i++)
+			listString = listString + "[" + i+"] " + list[i] + "\n";
+		return listString;
+	}
+
+}

@@ -1,0 +1,42 @@
+package ch7.largeInts;
+
+import ch7.byteLists.SpecializedList;
+
+public class LargeInt {
+	private SpecializedList numbers;  //Holds digits
+	
+	private static final boolean PLUS = true;
+	private static final boolean MINUS = false;
+	
+	private boolean sign;
+	
+	public LargeInt(){
+		numbers = new SpecializedList();
+		sign = PLUS;
+	}
+	
+	public LargeInt(String intString){
+		numbers = new SpecializedList();
+		sign = PLUS;
+		
+		int firstDigitPosition;
+		int lastDigitPosition;
+		
+		char digitChar;
+		int digitInt;
+		byte digitByte;
+		
+		firstDigitPosition=0;
+		if(intString.charAt(0) == '+')
+			firstDigitPosition=1;
+		else
+			if(intString.charAt(0) == '-'){
+				firstDigitPosition = 1;
+				sign = MINUS;
+			}
+		
+		lastDigitPosition = intString.length()-1;
+	}
+	
+
+}

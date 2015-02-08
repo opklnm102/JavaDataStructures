@@ -1,5 +1,0 @@
-package ch3.stacks;
-
-public interface StackInterface {
-
-}

@@ -1,0 +1,5 @@
+package ch6.lists;
+//정렬리스트 인터페이스
+public interface SortedListedListInterface extends ListInterface {
+	void add(Comparable element);
+}

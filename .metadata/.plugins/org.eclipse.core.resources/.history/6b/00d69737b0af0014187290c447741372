@@ -1,0 +1,59 @@
+package ch8.trees;
+
+import support.BSTNode;
+import ch5.queues.ArrayBndQueue;
+
+public class BinarySearchTree implements BSTInterface{
+	protected BSTNode root;
+	boolean found;
+	
+	protected ArrayBndQueue inOrderQueue;
+	protected ArrayBndQueue preOrderQueue;
+	protected ArrayBndQueue postOrderQueue;
+	
+	public BinarySearchTree() {
+		root = null;
+	}	
+
+	@Override
+	public boolean isEmpty() {
+		return (root == null);
+	}
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean contains(Comparable element) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Comparable get(Comparable element) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void add(Comparable element) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int reset(int orderType) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Comparable getNext(int orderType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

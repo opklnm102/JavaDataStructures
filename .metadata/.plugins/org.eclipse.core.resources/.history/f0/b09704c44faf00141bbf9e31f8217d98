@@ -1,0 +1,19 @@
+package ch6.lists;
+
+public class ArraySortedList extends List implements SortedListInterface {
+
+	public ArraySortedList() {
+		super();
+	}
+	
+	public ArraySortedList(int origCap) {
+		super(origCap);
+	}
+	
+	@Override
+	public void add(Comparable element) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

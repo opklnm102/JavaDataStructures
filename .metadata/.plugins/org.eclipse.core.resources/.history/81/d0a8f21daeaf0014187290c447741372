@@ -1,0 +1,5 @@
+package ch8.trees;
+
+public class BSTNode {
+
+}

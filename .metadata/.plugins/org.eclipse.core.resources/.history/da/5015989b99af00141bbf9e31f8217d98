@@ -1,0 +1,5 @@
+package ch7.byteLists;
+
+public interface SpecializedListInterface {
+
+}

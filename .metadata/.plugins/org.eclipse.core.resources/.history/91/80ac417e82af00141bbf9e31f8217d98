@@ -1,0 +1,19 @@
+package ch6.lists;
+
+import java.io.Serializable;
+import java.text.DecimalFormat;
+
+public class SerSongList implements Serializable{
+	protected String listName;
+	protected int totDuration=0;
+	
+	protected ArrayIndexedList songList;
+	
+	DecimalFormat fmt = new DecimalFormat("00");
+	
+	public SerSongList(String listName){
+		this.listName = listName;
+		songList = new 
+	}
+
+}

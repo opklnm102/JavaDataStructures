@@ -1,0 +1,94 @@
+package ch8.trees;
+
+import support.BSTNode;
+import ch5.queues.ArrayBndQueue;
+
+public class BinarySearchTree implements BSTInterface{
+	protected BSTNode root;
+	boolean found;
+	
+	protected ArrayBndQueue inOrderQueue;
+	protected ArrayBndQueue preOrderQueue;
+	protected ArrayBndQueue postOrderQueue;
+	
+	public BinarySearchTree() {
+		root = null;
+	}	
+
+	@Override
+	public boolean isEmpty() {
+		return (root == null);
+	}
+
+	@Override
+	public int size() {
+		return recSize(root);
+	}
+	
+	private int recSize(BSTNode tree){
+		if(tree == null)
+			return 0;
+		else
+			return recSize(tree.getLeft()) + recSize(tree.getRight())+1;
+	}
+
+	@Override
+	public boolean contains(Comparable element) {
+		return recContains(element,root);
+	}
+	
+	private boolean recContains(Comparable element, BSTNode tree){
+		if(tree == null)
+			return false;
+		else if(element.compareTo(tree.getInfo())<0)
+			return recContains(element,tree.getLeft());
+		else if(element.compareTo(tree.getInfo())>0)
+			return recContains(element,tree.getRight());
+		else
+			return false;
+	}
+
+	@Override
+	public Comparable get(Comparable element) {
+		return recGet(element,root);
+	}
+	
+	private Comparable recGet(Comparable element, BSTNode tree){
+		if(tree == null)
+			return null;
+		else if(element.compareTo(tree.getInfo())<0)
+			return recGet(element,tree.getLeft());
+		else if(element.compareTo(tree.getInfo())>0)
+			return recGet(element,tree.getRight());
+		else
+			return tree.getInfo();
+	}
+
+	@Override
+	public void add(Comparable element) {
+		root = recAdd(element,root);		
+	}
+	
+	private BSTNode recAdd(Comparable element, BSTNode tree){
+		if(tree == null)
+			tree = new BSTNode(element);
+		else if(element.compareTo(tree.getInfo())<=0)
+			tree.setLeft(recAdd(element,tree.getLeft()));
+		else
+			tree.setRight(recAdd(element,tree.getRight()));
+		return tree;			
+	}
+
+	@Override
+	public int reset(int orderType) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Comparable getNext(int orderType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

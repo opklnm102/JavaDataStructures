@@ -1,0 +1,23 @@
+package ch8.trees;
+
+public interface BSTInterface {
+	public static final int INORDER = 1;
+	public static final int PREORDER = 2;
+	public static final int POSTORDER = 3;
+	
+	boolean isEmpty();
+	
+	int size();
+	
+	boolean contains(Comparable element);
+	
+	boolean remove(Comparable element);
+	
+	Comparable get(Comparable element);
+	
+	void add(Comparable element);
+	
+	int reset(int orderType);
+	
+	Comparable getNext(int orderType);
+}

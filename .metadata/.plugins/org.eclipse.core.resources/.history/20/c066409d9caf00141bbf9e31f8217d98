@@ -1,0 +1,53 @@
+package ch7.byteLists;
+
+//2개의 참조를 가지는 이중연결리스트
+public class SpecializedList implements SpecializedListInterface {
+
+	protected class SListNode{
+		protected byte info;
+		protected SListNode next;
+		
+	}
+	@Override
+	public void resetForward() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public byte getNextElement() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void resetBackward() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public byte getPriorElement() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void addFront(byte element) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addEnd(byte element) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
